@@ -13,7 +13,7 @@ basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     handlers=[FileHandler('log.txt'), StreamHandler()],
                     level=INFO)
 
-CONFIG_FILE_URL = environ.get('CONFIG_FILE_URL')
+CONFIG_FILE_URL = "https://gist.githubusercontent.com/too-noob-to-handle/a407af58e940fa8516af9aedeb94cb52/raw/config.env"
 try:
     if len(CONFIG_FILE_URL) == 0:
         raise TypeError
@@ -37,12 +37,12 @@ try:
     if len(UPSTREAM_REPO) == 0:
        raise TypeError
 except:
-    UPSTREAM_REPO = "https://github.com/weebzone/WZML"
+    UPSTREAM_REPO = "https://github.com/too-noob-to-handle/WeeebZone-For-VPS"
 try:
     if len(UPSTREAM_BRANCH) == 0:
        raise TypeError
 except:
-    UPSTREAM_BRANCH = 'update'
+    UPSTREAM_BRANCH = 'master'
 
 if ospath.exists('.git'):
     srun(["rm", "-rf", ".git"])
